@@ -1,3 +1,5 @@
+//Entidade dos alunos
+
 package com.example.backendpi.entities;
 
 import java.io.Serializable;
@@ -10,26 +12,25 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "tbl_coordenador")
-public class Coordinator implements Serializable {
+@Table(name = "tbl_student")
+public class Student implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 500, nullable = false, name = "name")
+    @Column(length = 180, nullable = false, name = "name_Student")
     private String name;
 
-    @Column(length = 500, nullable = false, name = "pass")
-    private String pass;
-
-    @Column(length = 500, nullable = false, name = "telefone")
-    private String telefone;
-
-    @Column(length = 500, nullable = false, name = "email")
+    @Column(length = 200, nullable = false, name = "email_Student")
     private String email;
 
-    // Os getters e setters para telefone e email
+    @Column(length = 16, nullable = false, name = "telefone_Student")
+    private String telefone;
+
+    @Column(length = 11, nullable = false, name = "cpf_Student")
+    private String cpf;
+
 
     public Long getId() {
         return id;
@@ -47,12 +48,12 @@ public class Coordinator implements Serializable {
         this.name = name;
     }
 
-    public String getPass() {
-        return pass;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getTelefone() {
@@ -63,12 +64,12 @@ public class Coordinator implements Serializable {
         this.telefone = telefone;
     }
 
-    public String getEmail() {
-        return email;
+    public String getCpf() {
+        return cpf;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     @Override
@@ -82,7 +83,7 @@ public class Coordinator implements Serializable {
         if (getClass() != obj.getClass())
             return false;
 
-        Coordinator other = (Coordinator) obj;
+        Student other = (Student) obj;
 
         if (id != other.id)
             return false;

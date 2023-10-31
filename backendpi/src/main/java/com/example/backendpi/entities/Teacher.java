@@ -1,3 +1,5 @@
+//Entidade dos professores
+
 package com.example.backendpi.entities;
 
 import java.io.Serializable;
@@ -10,26 +12,28 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "tbl_coordenador")
-public class Coordinator implements Serializable {
+@Table(name = "tbl_teacher")
+public class Teacher implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 500, nullable = false, name = "name")
+    @Column(length = 180, nullable = false, name = "name_Teacher")
     private String name;
 
-    @Column(length = 500, nullable = false, name = "pass")
-    private String pass;
-
-    @Column(length = 500, nullable = false, name = "telefone")
+    @Column(length = 16, nullable = false, name = "telefone_Teacher")
     private String telefone;
 
-    @Column(length = 500, nullable = false, name = "email")
+    @Column(length = 11, nullable = false, name = "cpf_Teacher")
+    private String cpf;
+
+    @Column(length = 100, nullable = false, name = "discipline_Teacher")
+    private String discipline;
+
+    @Column(length = 200, nullable = false, name = "email_Teacher")
     private String email;
 
-    // Os getters e setters para telefone e email
 
     public Long getId() {
         return id;
@@ -47,20 +51,32 @@ public class Coordinator implements Serializable {
         this.name = name;
     }
 
-    public String getPass() {
-        return pass;
-    }
-
-    public void setPass(String pass) {
-        this.pass = pass;
-    }
-
     public String getTelefone() {
         return telefone;
     }
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getDiscipline() {
+        return discipline;
+    }
+
+    public void setDiscipline(String discipline) {
+        this.discipline = discipline;
+    }
+
+    public static Object stream() {
+        return null;
     }
 
     public String getEmail() {
@@ -82,16 +98,12 @@ public class Coordinator implements Serializable {
         if (getClass() != obj.getClass())
             return false;
 
-        Coordinator other = (Coordinator) obj;
+        Teacher other = (Teacher) obj;
 
         if (id != other.id)
             return false;
 
         return true;
-    }
-
-    public static Object stream() {
-        return null;
     }
 
 }
