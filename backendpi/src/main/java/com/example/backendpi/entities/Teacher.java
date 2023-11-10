@@ -19,19 +19,19 @@ public class Teacher implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 180, nullable = false, name = "name_Teacher")
+    @Column(length = 180, nullable = false, name = "name_teacher")
     private String name;
 
-    @Column(length = 16, nullable = false, name = "telefone_Teacher")
+    @Column(length = 16, nullable = false, name = "phone_teacher")
     private String telefone;
 
-    @Column(length = 11, nullable = false, name = "cpf_Teacher")
+    @Column(length = 11, nullable = false, name = "cpf_teacher")
     private String cpf;
 
-    @Column(length = 100, nullable = false, name = "discipline_Teacher")
+    @Column(length = 100, nullable = false, name = "discipline_teacher")
     private String discipline;
 
-    @Column(length = 200, nullable = false, name = "email_Teacher")
+    @Column(length = 200, nullable = false, name = "email_teacher")
     private String email;
 
 

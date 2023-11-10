@@ -17,16 +17,16 @@ public class Coordinator implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 500, nullable = false, name = "name")
+    @Column(length = 180, nullable = false, name = "name_coordinator")
     private String name;
 
-    @Column(length = 500, nullable = false, name = "pass")
+    @Column(length = 200, nullable = false, name = "pass_coordinator")
     private String pass;
 
-    @Column(length = 500, nullable = false, name = "telefone")
+    @Column(length = 16, nullable = false, name = "phone_coordinator")
     private String telefone;
 
-    @Column(length = 500, nullable = false, name = "email")
+    @Column(length = 200, nullable = false, name = "email_coordinator")
     private String email;
 
     // Os getters e setters para telefone e email

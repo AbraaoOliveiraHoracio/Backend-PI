@@ -19,16 +19,16 @@ public class Student implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 180, nullable = false, name = "name_Student")
+    @Column(length = 180, nullable = false, name = "name_student")
     private String name;
 
-    @Column(length = 200, nullable = false, name = "email_Student")
+    @Column(length = 200, nullable = false, name = "email_student")
     private String email;
 
-    @Column(length = 16, nullable = false, name = "telefone_Student")
+    @Column(length = 16, nullable = false, name = "phone_student")
     private String telefone;
 
-    @Column(length = 11, nullable = false, name = "cpf_Student")
+    @Column(length = 11, nullable = false, name = "cpf_student")
     private String cpf;
 
 
