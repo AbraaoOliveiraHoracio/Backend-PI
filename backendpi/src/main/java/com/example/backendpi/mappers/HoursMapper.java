@@ -19,13 +19,14 @@ public class HoursMapper {
 
     public static HoursResponse toDTO(Hours Hours) {
         return new HoursResponse(
+                Hours.getId(),
                 Hours.getHours(),
                 Hours.getStart(),
                 Hours.getEnd(),
                 Hours.getDay());
     }
 
-    public static List<HoursResponse> toDTOlList(List<Hours> Hours) {
+    public static List<HoursResponse> toDTOList(List<Hours> Hours) {
         return Hours.stream().map(HoursMapper::toDTO).collect(Collectors.toList());
     }
 }

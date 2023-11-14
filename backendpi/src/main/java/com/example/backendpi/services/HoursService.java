@@ -16,13 +16,13 @@ public class HoursService {
     @Autowired
     private HoursRepository repository;
 
-    public List<Hours> getHourss() {
+    public List<Hours> getHours() {
 
         return this.repository.findAll();
 
     }
 
-    public Hours getHourss(long id) {
+    public Hours getHours(long id) {
 
         return this.repository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Disciplina não encontrada!"));

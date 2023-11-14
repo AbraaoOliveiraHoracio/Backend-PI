@@ -17,6 +17,7 @@ public class DisciplineMapper {
 
     public static DisciplineResponse toDTO(Discipline discipline) {
         return new DisciplineResponse(
+                discipline.getId(),
                 discipline.getSize(),
                 discipline.getName());
     }

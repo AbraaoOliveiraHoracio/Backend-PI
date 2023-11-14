@@ -3,22 +3,11 @@ package com.example.backendpi.services;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-// Serviços
-
-package com.example.backendpi.services;
-
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.example.backendpi.dtos.CoordinatorRequest;
 import com.example.backendpi.dtos.CoordinatorResponse;
 import com.example.backendpi.entities.Coordinator;
 import com.example.backendpi.mappers.CoordinatorMapper;
 import com.example.backendpi.repositories.CoordinatorRepository;
-
 import jakarta.persistence.EntityNotFoundException;
 
 @Service
@@ -65,7 +54,8 @@ public class CoordinatorService {
             var updateCoordinator = this.repository.getReferenceById(id);
             updateCoordinator.setName(Coordinator.name());
             updateCoordinator.setPass(Coordinator.pass());
-
+            updateCoordinator.setTelefone(Coordinator.telefone());
+            updateCoordinator.setEmail(Coordinator.email());
             this.repository.save(updateCoordinator);
         } catch (EntityNotFoundException e) {
             throw new EntityNotFoundException("Coordenador não encontrado!");

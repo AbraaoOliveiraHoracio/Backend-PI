@@ -25,7 +25,7 @@ public class Student implements Serializable {
     @Column(length = 200, nullable = false, name = "email_student")
     private String email;
 
-    @Column(length = 16, nullable = false, name = "phone_student")
+    @Column(length = 20, nullable = false, name = "phone_student")
     private String telefone;
 
     @Column(length = 11, nullable = false, name = "cpf_student")

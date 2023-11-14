@@ -17,6 +17,7 @@ public class ClassRoomMapper {
 
     public static ClassRoomResponse toDTO(ClassRoom ClassRoom) {
         return new ClassRoomResponse(
+                ClassRoom.getId(),
                 ClassRoom.getType(),
                 ClassRoom.getFloor(),
                 ClassRoom.getSize());

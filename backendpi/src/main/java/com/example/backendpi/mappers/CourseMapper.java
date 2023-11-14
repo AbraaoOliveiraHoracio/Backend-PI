@@ -18,12 +18,13 @@ public class CourseMapper {
 
     public static CourseResponse toDTO(Course course) {
         return new CourseResponse(
+                course.getId(),
                 course.getName(),
                 course.getPeriod(),
                 course.getSize());
     }
 
-    public static List<CourseResponse> toDTOlList(List<Course> course) {
+    public static List<CourseResponse> toDTOList(List<Course> course) {
         return course.stream().map(CourseMapper::toDTO).collect(Collectors.toList());
     }
 
