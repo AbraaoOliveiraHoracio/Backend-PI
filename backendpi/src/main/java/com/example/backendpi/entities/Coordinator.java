@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+//Entidade
+
+>>>>>>> fa14e22 (Commit 1 - Coordenador)
 package com.example.backendpi.entities;
 
 import java.io.Serializable;
@@ -17,6 +22,7 @@ public class Coordinator implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+<<<<<<< HEAD
     @Column(length = 180, nullable = false, name = "name_coordinator")
     private String name;
 
@@ -27,6 +33,18 @@ public class Coordinator implements Serializable {
     private String telefone;
 
     @Column(length = 200, nullable = false, name = "email_coordinator")
+=======
+    @Column(length = 500, nullable = false, name = "name")
+    private String name;
+
+    @Column(length = 500, nullable = false, name = "pass")
+    private String pass;
+
+    @Column(length = 500, nullable = false, name = "telefone")
+    private String telefone;
+
+    @Column(length = 500, nullable = false, name = "email")
+>>>>>>> fa14e22 (Commit 1 - Coordenador)
     private String email;
 
     // Os getters e setters para telefone e email
