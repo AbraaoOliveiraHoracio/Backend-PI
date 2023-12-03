@@ -67,4 +67,9 @@ public class StudentService {
 
     }
 
+    public StudentResponse addStudent(StudentRequest studentRequest) {
+        var entity = this.repository.save(StudentMappers.toEntity(studentRequest));
+        return StudentMappers.toDTO(entity);
+    }
+
 }
