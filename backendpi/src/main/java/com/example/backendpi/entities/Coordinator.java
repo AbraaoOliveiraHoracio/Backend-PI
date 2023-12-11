@@ -29,8 +29,6 @@ public class Coordinator implements Serializable {
     @Column(length = 200, nullable = false, name = "email_coordinator")
     private String email;
 
-    // Os getters e setters para phone e email
-
     public Long getId() {
         return id;
     }

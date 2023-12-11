@@ -26,7 +26,7 @@ import com.example.backendpi.services.DisciplineService;
 
 @RestController
 @CrossOrigin
-@RequestMapping("discipline")
+@RequestMapping("Discipline")
 public class DisciplineController {
 
     @Autowired
