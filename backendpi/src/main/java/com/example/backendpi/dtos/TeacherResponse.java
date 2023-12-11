@@ -4,10 +4,11 @@ public record TeacherResponse(
 
         Long id,
         String name,
-        String telefone,
+        String phone,
         String cpf,
         String discipline,
-        String email
+        String email,
+        SchedulesResponse SchedulesResponse
 
 ) {
 }

@@ -3,12 +3,15 @@
 package com.example.backendpi.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -26,11 +29,12 @@ public class Student implements Serializable {
     private String email;
 
     @Column(length = 20, nullable = false, name = "phone_student")
-    private String telefone;
+    private String phone;
 
     @Column(length = 11, nullable = false, name = "cpf_student")
     private String cpf;
-
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
+    private List<Schedules> schedulesList;
 
     public Long getId() {
         return id;
@@ -56,12 +60,12 @@ public class Student implements Serializable {
         this.email = email;
     }
 
-    public String getTelefone() {
-        return telefone;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getCpf() {
@@ -70,6 +74,10 @@ public class Student implements Serializable {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public void setSchedulesList(List<Schedules> schedulesList) {
+        this.schedulesList = schedulesList;
     }
 
     @Override

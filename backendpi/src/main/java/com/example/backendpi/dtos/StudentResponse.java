@@ -5,6 +5,7 @@ public record StudentResponse(
         Long id,
         String name,
         String email,
-        String telefone,
-        String cpf) {
+        String phone,
+        String cpf,
+        SchedulesResponse SchedulesResponse) {
 }

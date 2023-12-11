@@ -42,7 +42,7 @@ public class StudentServiceTest {
         student.setName("John Doe");
         student.setCpf("123456789");
         student.setEmail("john.doe@example.com");
-        student.setTelefone("123456789");
+        student.setPhone("123456789");
     }
 
     @Test
@@ -73,7 +73,8 @@ public class StudentServiceTest {
     void saveStudent_Success() {
         when(repository.save(any())).thenReturn(new Student());
 
-        StudentRequest newStudentRequest = new StudentRequest("Jane Doe", "987654321", "jane.doe@example.com", "987654321");
+        StudentRequest newStudentRequest = new StudentRequest("Jane Doe", "987654321", "jane.doe@example.com",
+                "987654321", null);
 
         StudentResponse savedStudent = service.save(newStudentRequest);
 

@@ -23,7 +23,7 @@ public class HoursMapper {
                 Hours.getHours(),
                 Hours.getStart(),
                 Hours.getEnd(),
-                Hours.getDay());
+                Hours.getDay(), null);
     }
 
     public static List<HoursResponse> toDTOList(List<Hours> Hours) {

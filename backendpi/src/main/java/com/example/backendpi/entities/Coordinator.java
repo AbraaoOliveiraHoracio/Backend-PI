@@ -24,12 +24,12 @@ public class Coordinator implements Serializable {
     private String pass;
 
     @Column(length = 16, nullable = false, name = "phone_coordinator")
-    private String telefone;
+    private String phone;
 
     @Column(length = 200, nullable = false, name = "email_coordinator")
     private String email;
 
-    // Os getters e setters para telefone e email
+    
 
     public Long getId() {
         return id;
@@ -55,12 +55,12 @@ public class Coordinator implements Serializable {
         this.pass = pass;
     }
 
-    public String getTelefone() {
-        return telefone;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void SetPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getEmail() {

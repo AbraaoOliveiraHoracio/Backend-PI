@@ -21,7 +21,7 @@ public class CourseMapper {
                 course.getId(),
                 course.getName(),
                 course.getPeriod(),
-                course.getSize());
+                course.getSize(), null);
     }
 
     public static List<CourseResponse> toDTOList(List<Course> course) {

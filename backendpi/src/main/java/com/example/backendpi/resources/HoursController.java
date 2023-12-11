@@ -1,5 +1,3 @@
-// Controlador
-
 package com.example.backendpi.resources;
 
 import java.net.URI;
@@ -20,7 +18,9 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.example.backendpi.dtos.HoursRequest;
 import com.example.backendpi.dtos.HoursResponse;
+
 import com.example.backendpi.mappers.HoursMapper;
+
 import com.example.backendpi.services.HoursService;
 
 @RestController
@@ -31,23 +31,23 @@ public class HoursController {
     private HoursService service;
 
     @GetMapping
-    public ResponseEntity<List<HoursResponse>> getHours() {
+    public ResponseEntity<List<HoursResponse>> gethourss() {
 
-        var Hours = this.service.getHours();
-        return ResponseEntity.ok(HoursMapper.toDTOList(Hours));
+        var hourss = this.service.getHours();
+        return ResponseEntity.ok(HoursMapper.toDTOList(hourss));
 
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<HoursResponse> getHours(@PathVariable long id) {
+    public ResponseEntity<HoursResponse> gethourss(@PathVariable long id) {
 
-        var Hours = this.service.getHours(id);
-        return ResponseEntity.ok(HoursMapper.toDTO(Hours));
+        var hours = this.service.getHours(id);
+        return ResponseEntity.ok(HoursMapper.toDTO(hours));
 
     }
 
     @DeleteMapping("{id}")
-    public ResponseEntity<Void> deleteHours(@PathVariable long id) {
+    public ResponseEntity<Void> deletehours(@PathVariable long id) {
 
         this.service.deleteHoursById(id);
         return ResponseEntity.noContent().build();
@@ -55,25 +55,26 @@ public class HoursController {
     }
 
     @PostMapping
-    public ResponseEntity<HoursResponse> save(@Validated @RequestBody HoursRequest Hours) {
+    public ResponseEntity<HoursResponse> save(@Validated @RequestBody HoursRequest hours) {
 
-        var savedHours = this.service.save(Hours);
+        var savedhours = this.service.save(hours);
         URI location = ServletUriComponentsBuilder
 
                 .fromCurrentRequest()
                 .path("/{id}")
-                .buildAndExpand(savedHours.id())
+                .buildAndExpand(savedhours.id())
                 .toUri();
 
-        return ResponseEntity.created(location).body(savedHours);
+        return ResponseEntity.created(location).body(savedhours);
 
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<Void> update(@PathVariable long id, @Validated @RequestBody HoursRequest Hours) {
+    public ResponseEntity<Void> update(@PathVariable long id, @Validated @RequestBody HoursRequest hours) {
 
-        this.service.update(id, Hours);
+        this.service.update(id, hours);
         return ResponseEntity.ok().build();
 
     }
+
 }

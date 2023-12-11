@@ -1,7 +1,8 @@
 package com.example.backendpi.dtos;
 
 public record DisciplineResponse(
-        long id,
-        String name,
-        String size) {
+                long id,
+                String name,
+                String size,
+                SchedulesResponse SchedulesResponse) {
 }

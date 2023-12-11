@@ -20,7 +20,7 @@ public class ClassRoomMapper {
                 ClassRoom.getId(),
                 ClassRoom.getType(),
                 ClassRoom.getFloor(),
-                ClassRoom.getSize());
+                ClassRoom.getSize(), null);
     }
 
     public static List<ClassRoomResponse> toDTOList(List<ClassRoom> ClassRoom) {

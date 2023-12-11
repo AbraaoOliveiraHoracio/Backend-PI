@@ -13,7 +13,7 @@ public class TeacherMappers {
         Teacher teacher = new Teacher();
         teacher.setName(request.name());
         teacher.setCpf(request.cpf());
-        teacher.setTelefone(request.telefone());
+        teacher.SetPhone(request.phone());
         teacher.setEmail(request.email());
         teacher.setDiscipline(request.discipline());
         return teacher;
@@ -23,10 +23,10 @@ public class TeacherMappers {
         return new TeacherResponse(
                 teacher.getId(),
                 teacher.getName(),
-                teacher.getTelefone(),
+                teacher.getPhone(),
                 teacher.getCpf(),
                 teacher.getDiscipline(),
-                teacher.getEmail());
+                teacher.getEmail(), null);
     }
 
     public static List<TeacherResponse> toDTOList(List<Teacher> teachers) {

@@ -25,7 +25,7 @@ public class HoursService {
     public Hours getHours(long id) {
 
         return this.repository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Disciplina não encontrada!"));
+                .orElseThrow(() -> new EntityNotFoundException("Hora não encontrada!"));
 
     }
 
@@ -36,7 +36,7 @@ public class HoursService {
         }
 
         else {
-            throw new EntityNotFoundException("Disciplina não encontrada!");
+            throw new EntityNotFoundException("Hora não encontrada!");
 
         }
     }
@@ -58,9 +58,13 @@ public class HoursService {
             updateHours.setHours(Hours.Hours());
             this.repository.save(updateHours);
         } catch (EntityNotFoundException e) {
-            throw new EntityNotFoundException("Disciplina não encontrada!");
+            throw new EntityNotFoundException("Hora não encontrada!");
         }
 
+    }
+
+    public Object gethours() {
+        return null;
     }
 
 }

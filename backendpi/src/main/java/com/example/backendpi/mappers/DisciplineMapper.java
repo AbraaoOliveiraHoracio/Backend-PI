@@ -19,7 +19,7 @@ public class DisciplineMapper {
         return new DisciplineResponse(
                 discipline.getId(),
                 discipline.getSize(),
-                discipline.getName());
+                discipline.getName(), null);
     }
 
     public static List<DisciplineResponse> toDTOList(List<Discipline> discipline) {

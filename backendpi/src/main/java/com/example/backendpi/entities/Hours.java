@@ -1,12 +1,15 @@
 package com.example.backendpi.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -24,6 +27,8 @@ public class Hours implements Serializable {
     private String day;
     @Column(length = 500, nullable = false, name = "class_hour")
     private String Hours;
+    @OneToMany(mappedBy = "hours", cascade = CascadeType.ALL)
+    private List<Schedules> schedulesList;
 
     public Long getId() {
         return id;
@@ -65,6 +70,10 @@ public class Hours implements Serializable {
         Hours = hours;
     }
 
+    public void setSchedulesList(List<Schedules> schedulesList) {
+        this.schedulesList = schedulesList;
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -88,6 +97,10 @@ public class Hours implements Serializable {
         } else if (!id.equals(other.id))
             return false;
         return true;
+    }
+
+    public String getValue() {
+        return null;
     }
 
 }
