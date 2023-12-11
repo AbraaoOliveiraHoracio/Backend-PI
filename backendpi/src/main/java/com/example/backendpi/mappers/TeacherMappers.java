@@ -13,9 +13,10 @@ public class TeacherMappers {
         Teacher teacher = new Teacher();
         teacher.setName(request.name());
         teacher.setCpf(request.cpf());
-        teacher.setTelefone(request.telefone());
-        teacher.setEmail(request.email());
+        teacher.setphone(request.phone());
         teacher.setDiscipline(request.discipline());
+        teacher.setEmail(request.email());
+
         return teacher;
     }
 
@@ -23,8 +24,8 @@ public class TeacherMappers {
         return new TeacherResponse(
                 teacher.getId(),
                 teacher.getName(),
-                teacher.getTelefone(),
                 teacher.getCpf(),
+                teacher.getPhone(),
                 teacher.getDiscipline(),
                 teacher.getEmail());
     }

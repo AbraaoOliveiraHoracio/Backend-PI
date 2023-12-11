@@ -46,17 +46,23 @@ public class ClassRoomService {
         return ClassRoomMapper.toDTO(entity);
     }
 
-    public void update(long id, ClassRoomRequest ClassRoom) {
+    public void update(long id, ClassRoomRequest classRoomRequest) {
         try {
-            var updateClassRoom = this.repository.getReferenceById(id);
-            updateClassRoom.setType(ClassRoom.type());
-            updateClassRoom.setFloor(ClassRoom.Floor());
-            updateClassRoom.setSize(ClassRoom.size());
-            this.repository.save(updateClassRoom);
+            var optionalClassRoom = this.repository.findById(id);
+
+            if (optionalClassRoom.isPresent()) {
+                var existingClassRoom = optionalClassRoom.get();
+                existingClassRoom.setType(classRoomRequest.type());
+                existingClassRoom.setSize(classRoomRequest.size());
+                existingClassRoom.setFloor(classRoomRequest.floor());
+
+                this.repository.save(existingClassRoom);
+            } else {
+                throw new EntityNotFoundException("Sala não encontrada!");
+            }
         } catch (EntityNotFoundException e) {
             throw new EntityNotFoundException("Sala não encontrada!");
         }
-
     }
 
 }

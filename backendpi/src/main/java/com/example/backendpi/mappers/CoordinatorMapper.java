@@ -12,7 +12,7 @@ public class CoordinatorMapper {
         Coordinator coordinator = new Coordinator();
         coordinator.setName(request.name());
         coordinator.setPass(request.pass());
-        coordinator.setTelefone(request.telefone());
+        coordinator.setphone(request.phone());
         coordinator.setEmail(request.email());
         return coordinator;
     }
@@ -22,7 +22,7 @@ public class CoordinatorMapper {
                 coordinator.getId(),
                 coordinator.getName(),
                 coordinator.getPass(),
-                coordinator.getTelefone(),
+                coordinator.getPhone(),
                 coordinator.getEmail());
     }
 

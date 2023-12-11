@@ -58,7 +58,7 @@ public class StudentService {
             updateStudent.setName(Student.name());
             updateStudent.setCpf(Student.cpf());
             updateStudent.setEmail(Student.email());
-            updateStudent.setTelefone(Student.telefone());
+            updateStudent.setphone(Student.phone());
 
             this.repository.save(updateStudent);
         } catch (EntityNotFoundException e) {

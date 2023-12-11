@@ -48,17 +48,21 @@ public class DisciplineService {
 
     }
 
-    public void update(long id, DisciplineRequest Discipline) {
-
+    public void update(long id, DisciplineRequest discipline) {
         try {
-            var updateDiscipline = this.repository.getReferenceById(id);
-            updateDiscipline.setName(Discipline.name());
-            updateDiscipline.setSize(Discipline.size());
-            this.repository.save(updateDiscipline);
+            var optionalDiscipline = this.repository.findById(id);
+
+            if (optionalDiscipline.isPresent()) {
+                var updateDiscipline = optionalDiscipline.get();
+                updateDiscipline.setName(discipline.name());
+                updateDiscipline.setSize(discipline.size());
+                this.repository.save(updateDiscipline);
+            } else {
+                throw new EntityNotFoundException("Disciplina não encontrada!");
+            }
         } catch (EntityNotFoundException e) {
             throw new EntityNotFoundException("Disciplina não encontrada!");
         }
-
     }
 
 }

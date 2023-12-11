@@ -23,7 +23,7 @@ public class Teacher implements Serializable {
     private String name;
 
     @Column(length = 16, nullable = false, name = "phone_teacher")
-    private String telefone;
+    private String phone;
 
     @Column(length = 11, nullable = false, name = "cpf_teacher")
     private String cpf;
@@ -33,7 +33,6 @@ public class Teacher implements Serializable {
 
     @Column(length = 200, nullable = false, name = "email_teacher")
     private String email;
-
 
     public Long getId() {
         return id;
@@ -51,12 +50,12 @@ public class Teacher implements Serializable {
         this.name = name;
     }
 
-    public String getTelefone() {
-        return telefone;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setphone(String phone) {
+        this.phone = phone;
     }
 
     public String getCpf() {

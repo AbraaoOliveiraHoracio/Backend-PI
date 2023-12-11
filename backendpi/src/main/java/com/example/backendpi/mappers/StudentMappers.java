@@ -13,24 +13,23 @@ public class StudentMappers {
         Student student = new Student();
         student.setName(request.name());
         student.setCpf(request.cpf());
-        student.setTelefone(request.telefone());
+        student.setphone(request.phone());
         student.setEmail(request.email());
         return student;
     }
 
     public static StudentResponse toDTO(Student student) {
         return new StudentResponse(
-            student.getId(),
-            student.getName(),
-            student.getCpf(),
-            student.getTelefone(),
-            student.getEmail()
-        );
+                student.getId(),
+                student.getName(),
+                student.getCpf(),
+                student.getPhone(),
+                student.getEmail());
     }
 
     public static List<StudentResponse> toDTOList(List<Student> students) {
         return students.stream()
-            .map(StudentMappers::toDTO)
-            .collect(Collectors.toList());
+                .map(StudentMappers::toDTO)
+                .collect(Collectors.toList());
     }
 }

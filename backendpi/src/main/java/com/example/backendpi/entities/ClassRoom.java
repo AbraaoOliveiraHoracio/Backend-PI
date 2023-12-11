@@ -21,7 +21,7 @@ public class ClassRoom implements Serializable {
     @Column(length = 500, nullable = false, name = "type_room")
     private String type;
     @Column(length = 500, nullable = false, name = "floor_room")
-    private String Floor;
+    private String floor;
 
     public Long getId() {
         return id;
@@ -48,12 +48,12 @@ public class ClassRoom implements Serializable {
     }
 
     public String getFloor() {
-        return Floor;
+        return floor;
     }
 
     public void setFloor(String floor) {
-        Floor = floor;
-    }
+        this.floor = floor;
+    }   
 
     @Override
     public int hashCode() {

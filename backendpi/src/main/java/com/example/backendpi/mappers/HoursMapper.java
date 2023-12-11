@@ -11,9 +11,10 @@ public class HoursMapper {
 
     public static Hours toEntity(HoursRequest request) {
         Hours hours = new Hours();
+        hours.setHours(request.hours());
         hours.setStart(request.start());
         hours.setEnd(request.end());
-        hours.setHours(request.Hours());
+        hours.setDay(request.day());
         return hours;
     }
 

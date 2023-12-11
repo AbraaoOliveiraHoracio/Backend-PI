@@ -58,7 +58,7 @@ public class TeacherService {
             updateTeacher.setName(Teacher.name());
             updateTeacher.setCpf(Teacher.cpf());
             updateTeacher.setEmail(Teacher.email());
-            updateTeacher.setTelefone(Teacher.telefone());
+            updateTeacher.setphone(Teacher.phone());
             updateTeacher.setDiscipline(Teacher.discipline());
 
             this.repository.save(updateTeacher);

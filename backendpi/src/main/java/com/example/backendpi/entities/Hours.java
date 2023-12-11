@@ -23,7 +23,7 @@ public class Hours implements Serializable {
     @Column(length = 500, nullable = false, name = "class_day")
     private String day;
     @Column(length = 500, nullable = false, name = "class_hour")
-    private String Hours;
+    private String hours;
 
     public Long getId() {
         return id;
@@ -58,11 +58,11 @@ public class Hours implements Serializable {
     }
 
     public String getHours() {
-        return Hours;
+        return hours;
     }
 
     public void setHours(String hours) {
-        Hours = hours;
+        this.hours = hours;
     }
 
     @Override

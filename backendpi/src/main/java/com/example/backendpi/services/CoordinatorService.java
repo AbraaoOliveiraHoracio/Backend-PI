@@ -54,7 +54,7 @@ public class CoordinatorService {
             var updateCoordinator = this.repository.getReferenceById(id);
             updateCoordinator.setName(Coordinator.name());
             updateCoordinator.setPass(Coordinator.pass());
-            updateCoordinator.setTelefone(Coordinator.telefone());
+            updateCoordinator.setphone(Coordinator.phone());
             updateCoordinator.setEmail(Coordinator.email());
             this.repository.save(updateCoordinator);
         } catch (EntityNotFoundException e) {
