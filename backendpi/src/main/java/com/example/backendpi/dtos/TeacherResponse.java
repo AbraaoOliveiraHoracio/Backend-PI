@@ -4,10 +4,10 @@ public record TeacherResponse(
 
                 Long id,
                 String name,
-                String phone,
-                String cpf,
-                String discipline,
-                String email
+                String email,
+                String pass
+
+                
 
 ) {
 }

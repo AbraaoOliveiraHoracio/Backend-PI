@@ -22,17 +22,14 @@ public class Teacher implements Serializable {
     @Column(length = 180, nullable = false, name = "name_teacher")
     private String name;
 
-    @Column(length = 16, nullable = false, name = "phone_teacher")
-    private String phone;
-
-    @Column(length = 11, nullable = false, name = "cpf_teacher")
-    private String cpf;
-
-    @Column(length = 100, nullable = false, name = "discipline_teacher")
-    private String discipline;
-
-    @Column(length = 200, nullable = false, name = "email_teacher")
+   @Column(length = 200, nullable = false, name = "email_teacher")
     private String email;
+
+    @Column(length = 24, nullable = false, name = "pass_teacher")
+    private String pass;
+
+
+ 
 
     public Long getId() {
         return id;
@@ -50,33 +47,14 @@ public class Teacher implements Serializable {
         this.name = name;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getPass() {
+        return pass;
     }
 
-    public void setphone(String phone) {
-        this.phone = phone;
+    public void setPass(String pass) {
+        this.pass = pass;
     }
 
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public String getDiscipline() {
-        return discipline;
-    }
-
-    public void setDiscipline(String discipline) {
-        this.discipline = discipline;
-    }
-
-    public static Object stream() {
-        return null;
-    }
 
     public String getEmail() {
         return email;

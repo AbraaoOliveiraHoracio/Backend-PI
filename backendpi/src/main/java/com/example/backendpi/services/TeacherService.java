@@ -56,10 +56,8 @@ public class TeacherService {
         try {
             var updateTeacher = this.repository.getReferenceById(id);
             updateTeacher.setName(Teacher.name());
-            updateTeacher.setCpf(Teacher.cpf());
             updateTeacher.setEmail(Teacher.email());
-            updateTeacher.setphone(Teacher.phone());
-            updateTeacher.setDiscipline(Teacher.discipline());
+            updateTeacher.setPass(Teacher.pass());
 
             this.repository.save(updateTeacher);
         } catch (EntityNotFoundException e) {

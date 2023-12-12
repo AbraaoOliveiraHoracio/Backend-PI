@@ -26,7 +26,7 @@ import com.example.backendpi.services.DisciplineService;
 
 @RestController
 @CrossOrigin
-@RequestMapping("Discipline")
+@RequestMapping("discipline")
 public class DisciplineController {
 
     @Autowired
@@ -57,19 +57,17 @@ public class DisciplineController {
     }
 
     @PostMapping
-    public ResponseEntity<DisciplineResponse> save(@Validated @RequestBody DisciplineRequest discipline) {
+public ResponseEntity<DisciplineResponse> save(@Validated @RequestBody DisciplineRequest discipline) {
+    var savedDiscipline = this.service.save(discipline);
+    URI location = ServletUriComponentsBuilder
+            .fromCurrentRequest()
+            .path("/{id}")
+            .buildAndExpand(savedDiscipline.id())
+            .toUri();
 
-        var savedDiscipline = this.service.save(discipline);
-        URI location = ServletUriComponentsBuilder
+    return ResponseEntity.created(location).body(savedDiscipline);
+}
 
-                .fromCurrentRequest()
-                .path("/{id}")
-                .buildAndExpand(savedDiscipline.id())
-                .toUri();
-
-        return ResponseEntity.created(location).body(savedDiscipline);
-
-    }
 
     @PutMapping("{id}")
     public ResponseEntity<Void> update(@PathVariable long id, @Validated @RequestBody DisciplineRequest discipline) {

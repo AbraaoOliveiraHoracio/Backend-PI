@@ -18,8 +18,6 @@ public class Discipline implements Serializable {
     private Long id;
     @Column(length = 500, nullable = false, name = "name_discipline")
     private String name;
-    @Column(length = 500, nullable = false, name = "min_size")
-    private String size;
 
     public Long getId() {
         return id;
@@ -37,13 +35,6 @@ public class Discipline implements Serializable {
         this.name = name;
     }
 
-    public String getSize() {
-        return size;
-    }
-
-    public void setSize(String size) {
-        this.size = size;
-    }
 
     @Override
     public int hashCode() {

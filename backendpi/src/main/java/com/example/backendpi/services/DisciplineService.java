@@ -55,7 +55,6 @@ public class DisciplineService {
             if (optionalDiscipline.isPresent()) {
                 var updateDiscipline = optionalDiscipline.get();
                 updateDiscipline.setName(discipline.name());
-                updateDiscipline.setSize(discipline.size());
                 this.repository.save(updateDiscipline);
             } else {
                 throw new EntityNotFoundException("Disciplina não encontrada!");

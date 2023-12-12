@@ -12,15 +12,13 @@ public class DisciplineMapper {
     public static Discipline toEntity(DisciplineRequest request) {
         Discipline discipline = new Discipline();
         discipline.setName(request.name());
-        discipline.setSize(request.size());
         return discipline;
     }
 
     public static DisciplineResponse toDTO(Discipline discipline) {
         return new DisciplineResponse(
                 discipline.getId(),
-                discipline.getName(),
-                discipline.getSize());
+                discipline.getName());
     }
 
     public static List<DisciplineResponse> toDTOList(List<Discipline> disciplines) {
