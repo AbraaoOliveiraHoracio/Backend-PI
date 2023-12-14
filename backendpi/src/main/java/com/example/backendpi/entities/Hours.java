@@ -16,14 +16,18 @@ public class Hours implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(length = 500, nullable = false, name = "time_start")
+    @Column(length = 6, nullable = false, name = "time_start")
     private String start;
-    @Column(length = 500, nullable = false, name = "time_end")
+    @Column(length = 6, nullable = false, name = "time_end")
     private String end;
-    @Column(length = 500, nullable = false, name = "class_day")
+    @Column(length = 20, nullable = false, name = "class_day")
     private String day;
-    @Column(length = 500, nullable = false, name = "class_hour")
-    private String hours;
+    @Column(length = 40, nullable = false, name = "discipline_registred")
+    private String discipline;
+    @Column(length = 40, nullable = false, name = "course_registred")
+    private String course;
+    @Column(length = 40, nullable = false, name = "class_registred")
+    private String classroom;
 
     public Long getId() {
         return id;
@@ -31,6 +35,30 @@ public class Hours implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getClassRoom() {
+        return classroom;
+    }
+
+    public void setClassroom(String classroom) {
+        this.classroom = classroom;
+    }
+
+    public String getCourse() {
+        return course;
+    }
+
+    public void setCouse(String course) {
+        this.course = course;
+    }
+
+    public String getDiscipline() {
+        return discipline;
+    }
+
+    public void setDiscipline(String discipline) {
+        this.discipline = discipline;
     }
 
     public String getStart() {
@@ -55,14 +83,6 @@ public class Hours implements Serializable {
 
     public void setDay(String day) {
         this.day = day;
-    }
-
-    public String getHours() {
-        return hours;
-    }
-
-    public void setHours(String hours) {
-        this.hours = hours;
     }
 
     @Override
@@ -91,3 +111,11 @@ public class Hours implements Serializable {
     }
 
 }
+
+
+
+
+
+
+
+

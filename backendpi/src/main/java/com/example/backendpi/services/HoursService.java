@@ -55,7 +55,11 @@ public class HoursService {
             updateHours.setStart(Hours.start());
             updateHours.setEnd(Hours.end());
             updateHours.setDay(Hours.day());
-            updateHours.setHours(Hours.hours());
+            updateHours.setDiscipline(Hours.discipline());
+            updateHours.setCouse(Hours.course()); 
+            updateHours.setClassroom(Hours.classroom());
+            
+
             this.repository.save(updateHours);
         } catch (EntityNotFoundException e) {
             throw new EntityNotFoundException("Disciplina não encontrada!");

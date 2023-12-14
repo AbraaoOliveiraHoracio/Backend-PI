@@ -25,11 +25,8 @@ public class Teacher implements Serializable {
    @Column(length = 200, nullable = false, name = "email_teacher")
     private String email;
 
-    @Column(length = 24, nullable = false, name = "pass_teacher")
+    @Column(length = 24, nullable = false, name = "pass_teacher")   
     private String pass;
-
-
- 
 
     public Long getId() {
         return id;
